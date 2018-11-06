@@ -13,7 +13,7 @@ A Python script to automate the process of posting tweets
     CONSUMER_KEY = "####"
     CONSUMER_SECRET = "####"
     ```
- - Adjust the ```NUM_OF_TWEETS``` and ```WAIT_TIME``` parameter in ```script.py```. Make sure to not have a very small ```WAIT_TIME``.
+ - Adjust the ```NUM_OF_TWEETS``` and ```WAIT_TIME``` parameter in ```script.py```. Make sure to not have a very small ```WAIT_TIME```.
  - Run the script
     ```angular2html
     python script.py
