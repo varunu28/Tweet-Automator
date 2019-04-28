@@ -3,8 +3,10 @@ import tweepy
 import time
 
 from random import randint
+import string
+import random
 
-NUM_OF_TWEETS = 10
+NUM_OF_TWEETS = 1
 
 
 class TweetAutomation:
@@ -15,9 +17,9 @@ class TweetAutomation:
 
     api = tweepy.API()
 
-    WAIT_TIME = 30
+    WAIT_TIME = 15
     HASH_TAG = "#cmpe295A"
-    messages = ["Fire", "Food", "Shelter", "Doctor"]
+    messages = ["Fire", "Shelter", "Medical"]
 
     def __init__(self):
         self.auth()
@@ -30,7 +32,8 @@ class TweetAutomation:
 
     def send_tweet(self):
         idx = randint(0, len(self.messages) - 1)
-        self.api.update_status(status=self.messages[idx] + " \n" + self.HASH_TAG)
+        random_str = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))
+        self.api.update_status(status=self.messages[idx] + " \n"  + str(random_str) + self.HASH_TAG)
         time.sleep(self.WAIT_TIME)
 
 
